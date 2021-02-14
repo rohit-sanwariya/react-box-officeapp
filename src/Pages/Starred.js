@@ -1,12 +1,11 @@
 import React from 'react'
+import ManageLayout from '../Components/ManageLayout'
 
 const Starred = () => {
     return (
-        <div>
-            <h1>
-                Starred
-            </h1>
-        </div>
+        <ManageLayout>
+        <h1>Starred</h1> 
+     </ManageLayout>
     )
 }
 

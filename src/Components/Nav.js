@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-const Links = [
-    {to:'/',text:'Home'},
-    {to:'/starred',text:'Starred'},
-]
+const Links = [{to:'/',text:'Home'},{to:'/starred',text:'Starred'},]
 const Nav = () => {
     return (
         <div>
@@ -17,4 +14,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default Nav;
