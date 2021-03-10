@@ -1,24 +1,24 @@
 import React from 'react'
 import IMAGE_NOT_FOUND from '../../images/not-found.png'
-import {FlexGrid} from '../Styled'
+import {CastList} from '../Styled'
 const Casts = ({cast}) => {
     return (
-        <div>
+        <CastList>
             {
             cast.map(({person,character,voice},key)=>(
-                <div key={key}>
-                    <div>
-                        <img src={person.image ? person.image.medium : IMAGE_NOT_FOUND} alt=""/>
+                <div key={key} className="cast-item">
+                    <div className="pic-wrapper">
+                        <img src={person.image ? person.image.medium : IMAGE_NOT_FOUND} alt="" className=""/>
                     </div>
-                    <div>
-                        <span>{person.name} | {character.name} {voice ? `| Voice`: ' '}</span>
+                    <div className="actor">
+                        <span ><span className=" bold">{person.name}</span> | {character.name} {voice ? `| Voice`: ' '}</span>
                     </div>
                 </div>
             )
             )
 
             }
-        </div>
+        </CastList>
     )
 }
 

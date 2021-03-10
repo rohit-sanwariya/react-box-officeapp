@@ -1,15 +1,16 @@
 import React from 'react'
-
+import {DetailsWrapper} from '../Styled'
+const pObject ={margin: "5px 0"}
 const Details = ({status,premiered,network}) => {
     return (
-        <div>
-            <p>
+        <DetailsWrapper>
+            <p className={pObject}>
                 Status: <span>{status}</span>
             </p>
-            <p>
+            <p className={pObject}>
                 Premiered {premiered} {network?` on ${network.name}`:null}
             </p>
-        </div>
+        </DetailsWrapper>
     )
 }
 

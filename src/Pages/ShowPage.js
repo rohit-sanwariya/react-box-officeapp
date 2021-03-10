@@ -4,7 +4,7 @@ import Casts from '../Components/Shows/Casts';
 import Details from '../Components/Shows/Details';
 import Seasons from '../Components/Shows/Seasons';
 import ShowMainData from '../Components/Shows/ShowMainData';
-
+import {ShowPageWrapper,InfoBlock} from '../Components/Styled'
 const initalState={result:null,isloading:true,error:null }
 const reducer=(prevState,action)=>{
 switch (action.type) {
@@ -66,30 +66,32 @@ const ShowPage = () => {
         return <div>error</div>
     }
     return (
-        <div>
-        <ShowMainData image={state.result.image.medium?state.result.image.medium:state.result.image.original}
+        <ShowPageWrapper>
+        <ShowMainData 
+        image={result.image}
         rating ={ result.rating}
         name = { result.name}
         summary = {result.summary}
         tags = {result.genres}
         />
         
-        <div>
+        <InfoBlock>
             <h2>Details</h2>
         <Details status={result.status}
         network = {result.network}
         premiered = {result.premiered}
         />
-        </div>
-        <div>
+        </InfoBlock>
+        
+        <InfoBlock>
             <h2>Season</h2>
         <Seasons seasons={result._embedded.seasons}/>
-        </div>
-        <div>
+        </InfoBlock>
+        <InfoBlock>
             <h2>Cast</h2>
         <Casts cast={result._embedded.cast}/>
-        </div>
-        </div>
+        </InfoBlock>
+        </ShowPageWrapper>
     )
 }
 
