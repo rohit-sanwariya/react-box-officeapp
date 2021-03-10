@@ -6,7 +6,7 @@ const ManageLayout = ({children}) => {
     return (
         <div>
             <Title title= "Box Office"
-            subtitle="Are you Looking for an moovie or an Actress? "
+            subtitle="Are you Looking for an movie or an Actor? "
              />
       <Nav/>
     {children }
