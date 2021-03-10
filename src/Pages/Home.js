@@ -1,11 +1,16 @@
-
 import React,{useState} from 'react'
 import ManageLayout from '../Components/ManageLayout'
 import apiGet from '../Misc/Config';
 import ShowGrid from '../Components/Shows/ShowGrid'
 import ActorGrids from '../Components/Actors/ActorGrids'
+import { useLastQuery } from '../Misc/CustomHooks';
+
+
+
+
+
 const Home = () => {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useLastQuery();
     const [results, setResults] = useState(null);
     const [searchOption, setSearchOption] = useState('shows');
     const isOption = searchOption === 'shows'; 

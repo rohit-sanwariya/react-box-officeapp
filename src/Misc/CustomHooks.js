@@ -1,4 +1,4 @@
-import {useReducer,useEffect} from 'react'
+import {useReducer,useEffect, useState} from 'react'
 
 const showsReducer =(prevSate,action)=>{
 
@@ -31,4 +31,18 @@ return [state,dispatcher];
 
 export const useShow = (key='shows') =>{
     return usePersitedReducer(showsReducer,[],key)
+}
+
+
+export const useLastQuery = (key = 'lastQuery') => {
+    const [input, setInput] = useState(()=>{
+        const persited = sessionStorage.getItem(key);
+        return persited ? JSON.parse(persited) : " ";
+    });
+
+    const setPersistedInput =(newState) =>{
+        setInput(newState);
+        sessionStorage.setItem(key,JSON.stringify(newState))
+    }
+    return [input,setPersistedInput]
 }
