@@ -11,11 +11,11 @@ const Home = () => {
     const isOption = searchOption === 'shows'; 
     const onInputChange = (event) => {
         setInput(event.target.value);
-        console.log(input);
+       
     }
     const onSearch = async (event) => {
        const data = await apiGet(`search/${searchOption}?q=${input}`);
-       console.log(data);
+      
        setResults(data);
     }
     const onKeyDown = (event) =>{

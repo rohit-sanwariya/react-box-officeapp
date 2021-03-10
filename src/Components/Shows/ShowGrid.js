@@ -4,13 +4,14 @@ import {FlexGrid} from '../Styled'
 import IMAGE_NOT_FOUND from '../../images/not-found.png'
 import { useShow } from '../../Misc/CustomHooks';
 const ShowGrid = ({results}) => {
+   
     const [starredShows,dipatchStarred] = useShow();
     return  (  <FlexGrid> {results.map(
             ({show},i)=>{
 
 const isStarred = starredShows.includes(show.id)
 const onStarClick = ()=>{
-    console.log("clicked");
+     
     if(isStarred){
        dipatchStarred({type:"REMOVE",showId:show.id}) 
     }
