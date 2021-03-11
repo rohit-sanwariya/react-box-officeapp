@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useCallback } from "react";
 import ManageLayout from "../Components/ManageLayout";
 import apiGet from "../Misc/Config";
 import ShowGrid from "../Components/Shows/ShowGrid";
@@ -11,22 +11,29 @@ const Home = () => {
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState("shows");
   const isOption = searchOption === "shows";
-  const onInputChange = (event) => {
-    setInput(event.target.value);
-  };
+
+  const onInputChange = useCallback(
+    (event) => {
+      setInput(event.target.value);
+    },[setInput])
   const onSearch = async (event) => {
     const data = await apiGet(`search/${searchOption}?q=${input}`);
 
     setResults(data);
   };
+
   const onKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      onSearch();
+      if (event.keyCode === 13) {
+        onSearch();
+      }
     }
-  };
-  const onSearchOption = (event) => {
-    setSearchOption(event.target.value);
-  };
+
+  const onSearchOption = useCallback(
+    (event) => {
+      setSearchOption(event.target.value);
+    },[])
+  
+  
 
   const renderResults = () => {
     if (results && results.length === 0) {

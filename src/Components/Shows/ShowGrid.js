@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {  } from 'react'
 import ShowCards from './ShowCards';
 import {FlexGrid} from '../Styled'
 import IMAGE_NOT_FOUND from '../../images/not-found.png'
@@ -10,15 +10,19 @@ const ShowGrid = ({results}) => {
             ({show},i)=>{
 
 const isStarred = starredShows.includes(show.id)
-const onStarClick = ()=>{
+const onStarClick =  ()=>{
      
-    if(isStarred){
-       dipatchStarred({type:"REMOVE",showId:show.id}) 
+        if(isStarred){
+           dipatchStarred({type:"REMOVE",showId:show.id}) 
+        }
+        else{
+            dipatchStarred({type:"ADD",showId:show.id})
+        }
     }
-    else{
-        dipatchStarred({type:"ADD",showId:show.id})
-    }
-}
+
+  
+ 
+ 
                 
         return (< ShowCards 
             onStarClick = {onStarClick}
