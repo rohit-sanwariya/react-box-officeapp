@@ -57,6 +57,7 @@ const Home = () => {
         value={input}
         type="text"
         onKeyDown={onKeyDown}
+        placeholder="Search for Show or Actor......."
       />
       <RadioInputsWrapper>
       <div>  

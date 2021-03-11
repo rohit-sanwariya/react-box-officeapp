@@ -15,10 +15,7 @@ const ActorCards = ({ id, name, image, summary,country , birthday,deathday,gende
       <p>{country?`Comes from ${country}`:`No country known`}</p>
     {birthday ? <p>Born: {birthday}</p> : null}
     <p className="deathday">{deathday?`Died: ${deathday}`:`Alive`}</p>
-      <div>
-        <Link to={`actor/${id}`}>Read More</Link>
-        <button type="button">Star Me.</button>
-      </div>
+
     </StyledActorCard>
   );
 };
