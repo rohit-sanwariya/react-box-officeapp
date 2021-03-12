@@ -12,5 +12,6 @@ ReactDOM.render(
   </HashRouter>,
   document.getElementById('root')
 );
+ServiceWorkerRegistration.register();
 reportWebVitals();
  
